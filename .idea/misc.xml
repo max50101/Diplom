@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/drawable/custom_button_game.xml" value="0.31851851851851853" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/drawable/custom_card_view.xml" value="0.325" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/drawable/custom_choose_textview.xml" value="0.3828125" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/drawable/custom_linear_layout_game.xml" value="0.30833333333333335" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/drawable/custom_list_player_statistic.xml" value="0.31851851851851853" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/drawable/custom_list_three.xml" value="0.31851851851851853" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/drawable/custom_list_two.xml" value="0.31851851851851853" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/drawable/custom_list_view.xml" value="0.32222222222222224" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/drawable/gradient.xml" value="0.3828125" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/drawable/gradient_image.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/drawable/list_view_scorers.xml" value="0.31203703703703706" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/drawable/login_button.xml" value="0.3828125" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/drawable/login_email.xml" value="0.3828125" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/activity_choose.xml" value="0.3625" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/activity_country_league_games.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/activity_game.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/activity_player.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/activity_signup.xml" value="0.33" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/activity_standing.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/custom_list_layout_statistic.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/custom_list_view_player_statistic.xml" value="0.33" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/dialog_custom_layout.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/fragment_blank.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/fragment_games.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/fragment_news.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/fragment_overview.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/fragment_squad.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/fragment_statistic.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/fragment_table.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/fragment_team_choose.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/fragment_team_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_country_league_games.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_cup.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_cup_standing.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_cup_standings_sub.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_event.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_games.xml" value="0.5" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_games_tours.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_leagues.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_leagues_games.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_leagues_sub.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_playes.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_scorers.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_squad.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_standing.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/layout/list_view_standing_cup.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/maks/AndroidStudioProjects/Diplom/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33697916666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

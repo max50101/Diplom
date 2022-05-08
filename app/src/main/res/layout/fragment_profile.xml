@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profile.ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/welcome_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="5dp"
+                    android:paddingTop="10dp"
+                    android:layout_weight="0.7"
+                    android:text="@string/welcome" />
+
+                <TextView
+                    android:id="@+id/log_out"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:layout_weight="0.3"
+                    android:paddingTop="10dp"
+                    android:textColor="#CC1F1F"
+                    android:textStyle="italic"
+                    android:text="@string/sign_out" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/club_team"
+                card_view:cardCornerRadius="10dp"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="100dp" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/club_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/club_logo"
+                        android:layout_width="94dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="10dp"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="2dp" />
+
+                    <TextView
+                        android:id="@+id/club_team_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="114dp"
+                        android:layout_marginTop="4dp"
+                        android:text="asfaf"
+                        app:layout_constraintStart_toEndOf="@+id/club_logo"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/clubform1"
+                        android:layout_width="40dp"
+                        android:layout_height="23dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="38dp"
+                        android:textAlignment="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/clubform2"
+                        app:layout_constraintStart_toEndOf="@+id/textView18" />
+
+                    <TextView
+                        android:id="@+id/clubform2"
+                        android:layout_width="40dp"
+                        android:layout_height="23dp"
+                        android:layout_marginEnd="1dp"
+
+                        android:layout_marginBottom="38dp"
+                        android:textAlignment="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/clubform3" />
+
+                    <TextView
+                        android:id="@+id/clubform3"
+                        android:layout_width="40dp"
+                        android:layout_height="23dp"
+                        android:layout_marginEnd="1dp"
+
+                        android:layout_marginBottom="38dp"
+                        android:textAlignment="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/clubform4" />
+
+                    <TextView
+                        android:id="@+id/clubform4"
+                        android:layout_width="40dp"
+                        android:layout_height="23dp"
+                        android:layout_marginTop="39dp"
+                        android:layout_marginEnd="1dp"
+
+                        android:layout_marginBottom="38dp"
+                        android:textAlignment="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/clubform5"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/clubform5"
+                        android:layout_width="40dp"
+                        android:layout_height="23dp"
+
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginBottom="38dp"
+                        android:textAlignment="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="51dp"
+                        android:layout_height="23dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="39dp"
+                        android:text="@string/form"
+                        app:layout_constraintStart_toEndOf="@+id/club_logo"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/national_team"
+                android:layout_width="match_parent"
+                android:layout_height="101dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                card_view:cardCornerRadius="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView30"
+                        android:layout_width="51dp"
+                        android:layout_height="23dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="39dp"
+                        android:layout_marginBottom="39dp"
+                        android:text="@string/form"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/national_logo"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/nationalForm"
+                        android:layout_width="41dp"
+                        android:layout_height="23dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="39dp"
+
+                        android:textAlignment="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/nationalForm2"
+                        app:layout_constraintStart_toEndOf="@+id/textView30" />
+
+                    <TextView
+                        android:id="@+id/nationalForm2"
+                        android:layout_width="40dp"
+                        android:layout_height="23dp"
+                        android:textAlignment="center"
+
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="39dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/nationalForm3" />
+
+                    <TextView
+                        android:id="@+id/nationalForm3"
+                        android:layout_width="40dp"
+                        android:layout_height="23dp"
+                        android:textAlignment="center"
+
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="39dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/nationalForm4" />
+
+                    <TextView
+                        android:id="@+id/nationalForm4"
+                        android:layout_width="40dp"
+                        android:layout_height="23dp"
+                        android:textAlignment="center"
+
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="39dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/nationalForm5" />
+
+                    <TextView
+                        android:id="@+id/nationalForm5"
+                        android:layout_width="40dp"
+                        android:layout_height="23dp"
+
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginBottom="39dp"
+                        android:textAlignment="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/national_logo"
+                        android:layout_width="99dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="10dp"
+                        android:layout_marginStart="4dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        card_view:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+                        card_view:strokeColor="@color/white"
+                        card_view:strokeWidth="2dp" />
+
+                    <TextView
+                        android:id="@+id/national_team_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="114dp"
+                        android:layout_marginTop="3dp"
+                        android:text="TextView"
+                        app:layout_constraintStart_toEndOf="@+id/national_logo"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/team_players" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch1"
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:paddingTop="3dp"
+                    android:text="@string/club"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/players"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+
+                android:background="@drawable/custom_list_view" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/recent_games" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch2"
+
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.3"
+                    android:paddingTop="3dp"
+                    android:text="@string/club"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/games_playes"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_list_view"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

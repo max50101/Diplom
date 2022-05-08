@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/news"
+        android:title="@string/news"
+        android:icon="@drawable/ic_news"/>
+    <item
+        android:id="@+id/games_playes"
+        android:title="@string/games"
+        android:icon="@drawable/ic_games"/>
+    <item
+        android:id="@+id/tables"
+        android:title="@string/tables"
+        android:icon="@drawable/ic_tables"/>
+    <item
+        android:id="@+id/profile"
+        android:title="@string/profile"
+        android:icon="@drawable/ic_profile"/>
+
+</menu>
