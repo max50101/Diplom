@@ -62,7 +62,9 @@ class NewsFragment : Fragment() {
             val result=newsList.sortedByDescending {
                 formatter.parse(it.pubDate)
             }
-            println(result)
+            val adapter=NewsAdapter(requireContext(), result as MutableList<RssItem>)
+            listNews.adapter=adapter
+
         }
     }
 
