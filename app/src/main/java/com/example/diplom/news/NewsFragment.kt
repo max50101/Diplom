@@ -52,17 +52,17 @@ class NewsFragment : Fragment() {
         listNews=view.findViewById(R.id.news)
         listNews.layoutManager=LinearLayoutManager(requireContext())
         newsList= mutableListOf()
-        RssFeedFetcher(this).execute(URL(RSS_FEED_LINK_SPORT_RU),URL(RSS_FEED_LINK_SPORTS_RU),URL(RSS_FEED_LINK_SPORT_EXPRESS), URL(RSS_FEED_LINK_EUROFOOTBALL))
+        RssFeedFetcher(this).execute(URL(RSS_FEED_LINK_SPORT_RU),URL(RSS_FEED_LINK_SPORTS_RU), URL(RSS_FEED_LINK_EUROFOOTBALL),URL(RSS_FEED_LINK_SPORT_EXPRESS))
         return view
     }
     fun updateRV(rssItemsL: MutableList<RssItem>) {
         if (rssItemsL != null && !rssItemsL.isEmpty()) {
             newsList.addAll(rssItemsL)
-            val formatter =  SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.ENGLISH);
+            val formatter =  SimpleDateFormat("EEE, dd MMM yy HH:mm:ss zzz", Locale.ENGLISH);
             val result=newsList.sortedByDescending {
                 formatter.parse(it.pubDate)
             }
-            val adapter=NewsAdapter(requireContext(), result as MutableList<RssItem>)
+             val adapter=NewsAdapter(requireContext(), result as MutableList<RssItem>)
             listNews.adapter=adapter
 
         }
