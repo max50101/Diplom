@@ -14,6 +14,8 @@ import java.io.InputStream
 import java.lang.ref.WeakReference
 import java.net.HttpURLConnection
 import java.net.URL
+import java.text.SimpleDateFormat
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -49,15 +51,21 @@ class NewsFragment : Fragment() {
         val view= inflater.inflate(R.layout.fragment_news, container, false)
         listNews=view.findViewById(R.id.news)
         listNews.layoutManager=LinearLayoutManager(requireContext())
-        val url = URL(RSS_FEED_LINK_SPORT_RU)
-        RssFeedFetcher(this).execute(url)
+        newsList= mutableListOf()
+        RssFeedFetcher(this).execute(URL(RSS_FEED_LINK_SPORT_RU),URL(RSS_FEED_LINK_SPORTS_RU),URL(RSS_FEED_LINK_SPORT_EXPRESS), URL(RSS_FEED_LINK_EUROFOOTBALL))
         return view
     }
     fun updateRV(rssItemsL: MutableList<RssItem>) {
         if (rssItemsL != null && !rssItemsL.isEmpty()) {
             newsList.addAll(rssItemsL)
+            val formatter =  SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.ENGLISH);
+            val result=newsList.sortedByDescending {
+                formatter.parse(it.pubDate)
+            }
+            println(result)
         }
     }
+
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
@@ -72,20 +80,26 @@ class NewsFragment : Fragment() {
         val reference = WeakReference(context)
         private var stream: InputStream? = null;
         override fun doInBackground(vararg params: URL?): MutableList<RssItem>? {
-            val connect = params[0]?.openConnection() as HttpURLConnection
-            connect.readTimeout = 8000
-            connect.connectTimeout = 8000
-            connect.requestMethod = "GET"
-            connect.connect();
-            val responseCode: Int = connect.responseCode;
-            var rssItems: MutableList<RssItem>? = null
-            if (responseCode == 200) {
-                stream = connect.inputStream;
-                try {
-                    val parser = RssParser()
-                    rssItems = parser.parse(stream!!)
-                } catch (e: IOException) {
-                    e.printStackTrace()
+            var rssItems= mutableListOf<RssItem>()
+            for(i in 0 until params.size) {
+                var tempList= mutableListOf<RssItem>()
+                val connect = params[i]?.openConnection() as HttpURLConnection
+                connect.readTimeout = 8000
+                connect.connectTimeout = 8000
+                connect.requestMethod = "GET"
+                connect.connect();
+                val responseCode: Int = connect.responseCode;
+                if (responseCode == 200) {
+                    stream = connect.inputStream;
+                    try {
+                        val parser = RssParser()
+                        tempList = parser.parse(stream!!)
+                        tempList.forEach {
+                            rssItems!!.add(it)
+                        }
+                    } catch (e: IOException) {
+                        e.printStackTrace()
+                    }
                 }
             }
             return rssItems
