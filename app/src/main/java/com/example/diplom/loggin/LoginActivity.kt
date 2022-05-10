@@ -14,6 +14,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.AppCompatButton
 import com.example.diplom.MainActivity
 import com.example.diplom.R
+import com.example.diplom.isReallyOnline
 import com.example.diplom.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -28,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var passEditText:EditText
     lateinit var progressBar:ProgressBar
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         val signup=findViewById<TextView>(R.id.sign_up)

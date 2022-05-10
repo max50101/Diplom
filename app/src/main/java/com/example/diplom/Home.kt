@@ -8,6 +8,10 @@ import com.example.diplom.models.getGamesByTeam
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import java.io.IOException
+
+
+
 
 class Home :Application(){
     override fun onCreate() {
@@ -20,5 +24,7 @@ class Home :Application(){
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK )
             startActivity(intent)
         }
+
     }
+
 }

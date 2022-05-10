@@ -118,14 +118,12 @@ class ProfileFragment : Fragment() {
         clubTeam=user.clubTeam!!
         val view= inflater.inflate(R.layout.fragment_profile, container, false)
         init(view)
-//        setGreeting()
-//       setClubTeam()
-//        setNationalTeam()
-//        setPlayers(false)
-//       setGames(false)
-        GlobalScope.launch(Dispatchers.IO) {
-            addLeaguesToFirebase()
-        }
+        setGreeting()
+       setClubTeam()
+        setNationalTeam()
+        setPlayers(false)
+       setGames(false)
+
 
 
         logOut.setOnClickListener{

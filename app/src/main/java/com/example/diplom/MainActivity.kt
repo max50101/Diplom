@@ -2,6 +2,7 @@ package com.example.diplom
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.diplom.games.GamesFragment
 import com.example.diplom.models.CountryLeague
@@ -16,12 +17,27 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.google.gson.Gson
 import nl.joery.animatedbottombar.AnimatedBottomBar
+import java.io.IOException
+fun isReallyOnline(): Boolean {
+    val runtime = Runtime.getRuntime()
+    try {
+        val ipProcess = runtime.exec("/system/bin/ping -c 1 8.8.8.8")
+        val exitValue = ipProcess.waitFor()
+        return exitValue == 0
+    } catch (e: IOException) {
+        e.printStackTrace()
+    } catch (e: InterruptedException) {
+        e.printStackTrace()
+    }
+    return false
+}
 class MainActivity : AppCompatActivity() {
     lateinit var user: User
     lateinit var firebaseAuth: FirebaseAuth
     lateinit var firebaseUser: FirebaseUser
     lateinit var firebaseReference: DatabaseReference
     lateinit var leagueList:MutableList<CountryLeague>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

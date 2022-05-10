@@ -86,8 +86,8 @@ class NewsFragment : Fragment() {
             for(i in 0 until params.size) {
                 var tempList= mutableListOf<RssItem>()
                 val connect = params[i]?.openConnection() as HttpURLConnection
-                connect.readTimeout = 8000
-                connect.connectTimeout = 8000
+                connect.readTimeout = 20000
+                connect.connectTimeout = 20000
                 connect.requestMethod = "GET"
                 connect.connect();
                 val responseCode: Int = connect.responseCode;

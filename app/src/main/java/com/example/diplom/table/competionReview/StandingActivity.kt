@@ -92,10 +92,12 @@ class StandingActivity : AppCompatActivity() {
                 }
             }
         }
-        GlideToVectorYou
-            .init()
-            .with(applicationContext)
-            .load(Uri.parse(gameLeague.countryPhoto), countryPhoto)
+        if(gameLeague.countryPhoto!=null) {
+            GlideToVectorYou
+                .init()
+                .with(applicationContext)
+                .load(Uri.parse(gameLeague.countryPhoto), countryPhoto)
+        }
         Glide.with(applicationContext)
             .load(gameLeague.logo)
             .fitCenter()
