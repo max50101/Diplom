@@ -130,7 +130,7 @@
         android:drawableStart="@drawable/ic_login_name"
         android:drawablePadding="5dp"
         android:ems="10"
-        android:hint="Name"
+        android:hint="@string/Имя"
         android:inputType="textPersonName"
         android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"

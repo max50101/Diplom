@@ -37,7 +37,6 @@ class GamesFragment : Fragment(), DatePickerDialog.OnDateSetListener {
     lateinit var changeDate:AppCompatButton
     lateinit var activeLeague:RecyclerView
     lateinit var gameList:MutableList<Game>
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     var day = 0

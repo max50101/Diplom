@@ -69,6 +69,7 @@
     <string name="no_next_matches">No next matches in this tournament</string>
     <string name="choose_date">Choose Date</string>
     <string name="today_date">"Choosen date: "</string>
+    <string name="Имя">Name</string>
     <string-array name="season">
         <item>2021</item>
         <item>2020</item>

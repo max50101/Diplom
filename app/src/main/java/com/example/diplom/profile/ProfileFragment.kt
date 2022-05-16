@@ -132,6 +132,7 @@ class ProfileFragment : Fragment() {
         playersSwitch.setOnCheckedChangeListener{i1,isChecked->switchPlayers(i1,isChecked)}
         gamesSwitch.setOnCheckedChangeListener{i1,isChecked->switchGames(i1,isChecked)}
         clubCardView.setOnClickListener{v->changeClubTeam(v)}
+        nationalCardView.setOnClickListener{v->changeNationalTeam()}
         return view
     }
     fun changeClubTeam(view:View){

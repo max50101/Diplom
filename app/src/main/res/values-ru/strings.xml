@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">Диплом</string>
+    <string name="email">Адрес электронной почты</string>
+    <string name="password">Пароль</string>
+    <string name="login">Войти</string>
+    <string name="create_acc">Создать аккаунт</string>
+    <string name="create_account">Создать аккаунт</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="not_inputed">Данное поле пустое</string>
+    <string name="incorrect_email">Неверный формат адреса электронной почты</string>
+    <string name="password_error_length">Длина пароля меньше 6</string>
+    <string name="not_choosed_national">Сборная не выбрана</string>
+    <string name="not_choosed_club">Клуб не выбран</string>
+    <string name="user_registred">Пользователь зарегестрирован</string>
+    <string name="unsucsessful">Неудачно</string>
+    <string name="unsucsessful_login">Авторизация неуспешна, проверьте ваши данные</string>
+    <string name="news">Новости</string>
+    <string name="games">Игры</string>
+    <string name="tables">Таблицы</string>
+    <string name="profile">Профиль</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="sign_out">Выйти ?</string>
+    <string name="form">Исходы: </string>
+    <string name="age">"Возраст: "</string>
+    <string name="position">"Позиция: "</string>
+    <string name="goalkeeper">Вратарь</string>
+    <string name="defender">Защитник</string>
+    <string name="midfielder">Полузащитник</string>
+    <string name="attacker">Нападающий</string>
+    <string name="club">Клуб</string>
+    <string name="team_players">Игроки команды</string>
+    <string name="recent_games">Последние игры</string>
+    <string name="player_age">Возраст:</string>
+    <string name="player_nationality">Национальность:</string>
+    <string name="player_height">Рост:</string>
+    <string name="player_weight">Вес:</string>
+    <string name="saves">"Всего/сэйвы: "</string>
+    <string name="penalties_saved">Отбитых пенальти:</string>
+    <string name="overview">Обзор</string>
+    <string name="statistic">Статистика</string>
+    <string name="squads">Составы</string>
+    <string name="varcheck">VAR</string>
+    <string name="start_squad">Стартовы состав</string>
+    <string name="substitution">Замены</string>
+    <string name="coaches">тренера</string>
+    <string name="change">Сменить</string>
+    <string name="change_club_team">Вы уверены, что хотите сменить любимый клуб?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="table">Таблицы</string>
+    <string name="scorers">Голы</string>
+    <string name="home">Дома</string>
+    <string name="away">В гостях</string>
+    <string name="calendar">Впереди</string>
+    <string name="results">Матчи</string>
+    <string name="team_name">"Команда"</string>
+    <string name="GP">ИС</string>
+    <string name="W">В</string>
+    <string name="D">Н</string>
+    <string name="L">П</string>
+    <string name="GD">РГ</string>
+    <string name="P">П</string>
+    <string name="player_name">Имя</string>
+    <string name="goals">Голы</string>
+    <string name="assists">Ассисты</string>
+    <string name="no_table">There is no standings for this tournament</string>
+    <string name="no_results_league">No results in this league</string>
+    <string name="no_next_matches">Нет следующих матчей</string>
+    <string name="choose_date">Выбрать дату</string>
+    <string name="today_date">"Выбранная дата: "</string>
+    <string name="Имя">Имя</string>
+    <string-array name="season">
+        <item>2021</item>
+        <item>2020</item>
+        <item>2019</item>
+        <item>2018</item>
+        <item>2017</item>
+    </string-array>
+    <string-array name="league_cup">
+        <item>Лига</item>
+        <item>Кубок</item>
+    </string-array>
+    <string-array name="word_cup">
+        <item>2018</item>
+        <item>2014</item>
+        <item>2010</item>
+    </string-array>
+    <string-array name="euro">
+        <item>2020</item>
+        <item>2016</item>
+        <item>2012</item>
+        <item>2008</item>
+    </string-array>
+    <string-array name="america">
+        <item>2021</item>
+        <item>2019</item>
+        <item>2016</item>
+        <item>2015</item>
+    </string-array>
+    <string-array name="africa">
+        <item>2021</item>
+        <item>2019</item>
+        <item>2017</item>
+        <item>2015</item>
+    </string-array>
+</resources>

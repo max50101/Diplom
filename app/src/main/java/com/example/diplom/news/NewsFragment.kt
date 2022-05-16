@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.diplom.R
@@ -22,15 +23,12 @@ import java.util.*
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [NewsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class NewsFragment : Fragment() {
     lateinit var listNews:RecyclerView
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var progressBar:ProgressBar
     private lateinit var newsList:MutableList<RssItem>
     val RSS_FEED_LINK_SPORT_RU = "https://www.sport.ru/rssfeeds/football.rss";
     val RSS_FEED_LINK_SPORTS_RU = "https://www.sports.ru/rss/rubric.xml?s=208";
@@ -49,6 +47,8 @@ class NewsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view= inflater.inflate(R.layout.fragment_news, container, false)
+        progressBar=view.findViewById(R.id.progressBar2)
+        progressBar.visibility=View.VISIBLE
         listNews=view.findViewById(R.id.news)
         listNews.layoutManager=LinearLayoutManager(requireContext())
         newsList= mutableListOf()
@@ -56,6 +56,7 @@ class NewsFragment : Fragment() {
         return view
     }
     fun updateRV(rssItemsL: MutableList<RssItem>) {
+        progressBar.visibility=View.GONE
         if (rssItemsL != null && !rssItemsL.isEmpty()) {
             newsList.addAll(rssItemsL)
             val formatter =  SimpleDateFormat("EEE, dd MMM yy HH:mm:ss zzz", Locale.ENGLISH);
