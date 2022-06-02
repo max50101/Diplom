@@ -10,8 +10,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import java.io.IOException
 
-
-
+const val shareName="MyPreference"
+const val teamId="TeamId"
+const val countryId="CountryId"
+const val notification="Notification"
 
 class Home :Application(){
     override fun onCreate() {

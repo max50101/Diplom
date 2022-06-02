@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.diplom.databinding.ActivityMainBinding
 import com.example.diplom.games.GamesFragment
 import com.example.diplom.models.CountryLeague
 import com.example.diplom.models.User
@@ -18,6 +19,16 @@ import com.google.firebase.database.*
 import com.google.gson.Gson
 import nl.joery.animatedbottombar.AnimatedBottomBar
 import java.io.IOException
+import android.app.AlarmManager
+
+import android.app.PendingIntent
+import android.content.Context
+
+import android.content.Intent
+import android.util.Log
+import java.util.*
+
+
 fun isReallyOnline(): Boolean {
     val runtime = Runtime.getRuntime()
     try {
@@ -31,6 +42,7 @@ fun isReallyOnline(): Boolean {
     }
     return false
 }
+
 class MainActivity : AppCompatActivity() {
     lateinit var user: User
     lateinit var firebaseAuth: FirebaseAuth
@@ -43,10 +55,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         init()
         initLeagues()
+        val sharedPreferences=applicationContext.getSharedPreferences(shareName, Context.MODE_PRIVATE)
+//        if(!sharedPreferences.contains(notification)){
+//            val sharedEd=sharedPreferences.edit()
+//            sharedEd.putInt(notification,1)
+//            sharedEd.commit()
+//
+//        }
+        myAlarm()
         val bar=findViewById<AnimatedBottomBar>(R.id.bottom_bar)
-        setCurrentFragment(NewsFragment())
-
-        bar.selectTabAt(0)
+       // setCurrentFragment(NewsFragment())
+        //bar.selectTabAt(0)
         bar.setOnTabSelectListener(object : AnimatedBottomBar.OnTabSelectListener {
 
             override fun onTabSelected(
@@ -78,6 +97,29 @@ class MainActivity : AppCompatActivity() {
               }
             }
         })
+    }
+    fun myAlarm() {
+        val calendar: Calendar = Calendar.getInstance()
+        calendar.set(Calendar.HOUR_OF_DAY, 21)
+        calendar.set(Calendar.MINUTE, 13)
+        calendar.set(Calendar.SECOND, 1)
+        if (calendar.getTime().compareTo(Date()) < 0) calendar.add(Calendar.DAY_OF_MONTH, 1)
+        val intent = Intent(applicationContext, NotificationReceiver::class.java)
+        intent.putExtra("Name","Main")
+        val pendingIntent = PendingIntent.getBroadcast(
+            applicationContext,
+            0,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+
+        val alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
+        alarmManager.setRepeating(
+            AlarmManager.RTC_WAKEUP,
+            calendar.timeInMillis,
+            1000,
+            pendingIntent
+        )
     }
     private fun init(){
         firebaseAuth= FirebaseAuth.getInstance()

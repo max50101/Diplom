@@ -10,13 +10,15 @@ android {
     defaultConfig {
         applicationId "com.example.diplom"
         minSdk 29
-        targetSdk 32
+        targetSdk 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    buildFeatures{
+        viewBinding true
+    }
     buildTypes {
         release {
             minifyEnabled false

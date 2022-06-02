@@ -19,6 +19,9 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.json.JSONArray
 import org.json.JSONObject
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
 fun addLeaguesToFirebase(){
     val gson=Gson()
     val client = OkHttpClient()
@@ -550,6 +553,22 @@ fun getGamesByDate(date:String):MutableList<Game>{
 
     val response = client.newCall(request).execute().body!!.string()
     return getGameFromJson(response)
+}
+fun getGameByDateNotification(id:Int):MutableList<Game>{
+    val formatter= DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    val m=LocalDate.now().format(formatter)
+    val client = OkHttpClient()
+
+    val request = Request.Builder()
+        .url("https://api-football-v1.p.rapidapi.com/v3/fixtures?date=$m&season=2021&team=$id")
+        .get()
+        .addHeader("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com")
+        .addHeader("X-RapidAPI-Key", "2189b0cc44msh3d61c8e39f613b8p12ec99jsn820e38f51e4e")
+        .build()
+
+    val response = client.newCall(request).execute().body!!.string()
+    return getGameFromJson(response)
+
 }
 
 

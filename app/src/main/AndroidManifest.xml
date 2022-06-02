@@ -3,7 +3,7 @@
     package="com.example.diplom">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
     <application
         android:name=".Home"
         android:allowBackup="true"
@@ -12,6 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Diplom">
+        <receiver android:name=".NotificationReceiver"  android:enabled="true"  />
+
         <activity
             android:name=".games.CountryLeagueGamesActivity"
             android:exported="false" />

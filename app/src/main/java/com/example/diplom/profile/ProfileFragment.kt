@@ -1,7 +1,9 @@
 package com.example.diplom.profile
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -18,10 +20,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.diplom.R
+import com.example.diplom.countryId
 import com.example.diplom.loggin.ChooseActivity
 import com.example.diplom.loggin.LoginActivity
 import com.example.diplom.models.*
 import com.example.diplom.models.game.Game
+import com.example.diplom.shareName
+import com.example.diplom.teamId
 import com.google.android.material.imageview.ShapeableImageView
 
 import com.google.firebase.auth.FirebaseAuth
@@ -101,6 +106,7 @@ class ProfileFragment : Fragment() {
     lateinit var firebaseDb:DatabaseReference
     lateinit var clubCardView:CardView
     lateinit var nationalCardView:CardView
+    lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -114,6 +120,13 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         user= Gson().fromJson(param1,User::class.java)
+        sharedPreferences=requireContext().getSharedPreferences(shareName, Context.MODE_PRIVATE)
+        if(!sharedPreferences.contains(teamId)){
+            val sharedEd=sharedPreferences.edit()
+            user.clubTeam!!.id?.let { sharedEd.putInt(teamId, it) }
+            user.nationalTeam!!.id?.let { sharedEd.putInt(countryId, it) }
+            sharedEd.commit()
+        }
         nationalTeam=user.nationalTeam!!
         clubTeam=user.clubTeam!!
         val view= inflater.inflate(R.layout.fragment_profile, container, false)
@@ -164,47 +177,37 @@ class ProfileFragment : Fragment() {
         if(requestCode==1) {
             FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().currentUser!!.uid).child("clubTeam").setValue(gson).addOnCompleteListener {
                 if(it.isSuccessful){
-                    firebaseAuth= FirebaseAuth.getInstance()
-                    firebaseUser=firebaseAuth.currentUser!!
-                    val firebaseReference=FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.uid)
-                    firebaseReference.addValueEventListener(object : ValueEventListener {
-                        override fun onDataChange(snapshot: DataSnapshot) {
-                            user = snapshot.getValue(User::class.java)!!
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                                requireFragmentManager().beginTransaction().detach(this@ProfileFragment).commitNow();
-                                requireFragmentManager().beginTransaction().apply {
-                                    replace(R.id.flFragment,ProfileFragment.newInstance(Gson().toJson(user)))
-                                    commit()
-                                }
-                            } else {
-                                requireFragmentManager().beginTransaction().detach(this@ProfileFragment).attach(ProfileFragment.newInstance(Gson().toJson(user))).commit();
-                            }
-                        }
-
-                        override fun onCancelled(error: DatabaseError) {
-                            TODO("Not yet implemented")
-                        }
-
-                    })
+                    restart(0)
                 }
             }
 
         }else{
             FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().currentUser!!.uid).child("nationalTeam").setValue(gson).addOnCompleteListener {
                 if(it.isSuccessful){
-                    restart()
+                    restart(1)
 
                 }
             }
         }
     }
-    fun restart(){
+    fun restart(value:Int){
         firebaseAuth= FirebaseAuth.getInstance()
         firebaseUser=firebaseAuth.currentUser!!
         val firebaseReference=FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.uid)
         firebaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 user = snapshot.getValue(User::class.java)!!
+                if(value==0){
+                val sharedEd=sharedPreferences.edit()
+                user.clubTeam!!.id?.let { it1 -> sharedEd.putInt(teamId, it1) }
+                sharedEd.commit()
+                }
+                else{
+                    val sharedEd=sharedPreferences.edit()
+                    user.nationalTeam!!.id?.let { it1 -> sharedEd.putInt(countryId, it1) }
+                    sharedEd.commit()
+                }
+
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     requireFragmentManager().beginTransaction().detach(this@ProfileFragment).commitNow();
                     requireFragmentManager().beginTransaction().apply {
